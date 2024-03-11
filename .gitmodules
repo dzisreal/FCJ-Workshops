@@ -1,3 +1,9 @@
 [submodule "FCJ-Workshop-1-All/public"]
 	path = FCJ-Workshop-1-All/public
 	url = https://github.com/dzisreal/FCJ-Workshope-1-Deploy.git
+[submodule "FCJ-Workshop-1-All/FCJ-Workshop-1-All/FCJ-Script-Workshop-1"]
+	path = FCJ-Workshop-1-All/FCJ-Workshop-1-All/FCJ-Script-Workshop-1
+	url = https://github.com/dzisreal/FCJ-Workshop-1.git
+[submodule "FCJ-Workshop-1-All/FCJ-Script-Workshop-1"]
+	path = FCJ-Workshop-1-All/FCJ-Script-Workshop-1
+	url = https://github.com/dzisreal/FCJ-Workshop-1.git
