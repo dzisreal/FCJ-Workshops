@@ -36,6 +36,6 @@ Trong bước này, chúng ta sẽ tạo ***HTTPS Git credentials for AWS CodeCo
 
 ![Connect](/images/4.CreateRepo/remote_and_log_in_popup.png)
 
-7. Sau khi remote thành công, từ bây giờ chúng ta có thể push code từ Local lên ***Repository CodeCommit*** bằng câu lệnh ***Git*** như bình thường, ***Repository** của chúng ta sẽ gồm 3 folder chính như hình, mọi người có thể tham khảo thêm thông tin các file ở [link](https://github.com/dzisreal/FCJ-Workshop-1.git) này.
+7. Sau khi remote thành công, từ bây giờ chúng ta có thể push code từ Local lên ***Repository CodeCommit*** bằng câu lệnh ***Git*** như bình thường, ***Repository*** của chúng ta sẽ gồm 3 folder chính như hình, mọi người có thể tham khảo thêm thông tin các file ở [link](https://github.com/dzisreal/FCJ-Workshop-1.git) này.
 
 ![Connect](/images/4.CreateRepo/repo_detail.png)

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 2. </b> "
 ---
 
-![ConnectPrivate](/images/1.Overview/Architect.png)
+![ConnectPrivate](/images/1.Overview/Architect.drawio.png)
 
 Trong bài workshop này, chúng ta sẽ cùng nhau dựng 1 luồng **CI/CD** cơ bản sử dụng các service của **AWS**, bao gồm:
 - CodeCommit

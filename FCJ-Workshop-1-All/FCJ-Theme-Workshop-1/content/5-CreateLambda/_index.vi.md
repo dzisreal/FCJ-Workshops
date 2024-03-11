@@ -6,88 +6,42 @@ chapter : false
 pre : " <b> 5. </b> "
 ---
 
-{{% notice info %}}
-**Port Forwarding** là mốt cách thức hữu ích để chuyển hướng lưu lượng mạng từ 1 địa chỉ IP - Port này sang 1 địa chỉ IP - Port khác. Với **Port Forwarding** chúng ta có thể truy cập một EC2 instance nằm trong private subnet từ máy trạm của chúng ta.
-{{% /notice %}}
 
-Chúng ta sẽ cấu hình **Port Forwarding** cho kết nối RDP giữa máy của mình với **Private Windows Instance** nằm trong private subnet mà chúng ta đã tạo cho bài thực hành này.
+Ở bước này, chúng ta sẽ tiến hành tạo và viết các **Function Lambda** cho để đọc các file code và file cấu hình từ **S3**, sau đó thực hiện việc lưu **Job's Entry** vào **DynamoDB** và tạo **Glue Job** từ các file tương ứng.
 
-![port-fwd](/images/arc-04.png) 
+![lambda](/images/5.CreateLambda/NoteLambda.png) 
 
 
 
-#### Tạo IAM User có quyền kết nối SSM
+#### Tạo Lambda Function
 
-1. Truy cập vào [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/home)
-  + Click **Users** , sau đó click **Add users**.
+1. Truy cập vào [giao diện quản trị dịch vụ AWS Lambda](https://console.aws.amazon.com/lambda/home)
+  + Click **Functions** , sau đó click **Create function**.
 
-![FWD](/images/5.fwd/001-fwd.png)
+![lambda](/images/5.CreateLambda/console_create_lambda.png) 
 
-2. Tại trang **Add user**.
-  + Tại mục **User name**, điền **Portfwd**.
-  + Click chọn **Access key - Programmatic access**.
-  + Click **Next: Permissions**.
+2. Tại trang **Create function**.
+  + Chúng ta lần lượt điền click chọn và điền thông tin theo các bước, ở phần **Role**, chúng ta chọn **Role** đã tạo ở bước [3.2](../3-PolicyAndRole/3.2-Lambda/).
   
-![FWD](/images/5.fwd/002-fwd.png)
+![lambda](/images/5.CreateLambda/part1_create_lambda.png) 
+![lambda](/images/5.CreateLambda/part2_create_lambda.png) 
 
-3. Click **Attach existing policies directly**.
-  + Tại ô tìm kiếm , điền **ssm**.
-  + Click chọn **AmazonSSMFullAccess**.
-  + Click **Next: Tags**, click **Next: Reviews**.
-  + Click **Create user**.
 
-4. Lưu lại thông tin **Access key ID** và **Secret access key** để thực hiện cấu hình AWS CLI.
+3. Làm các bước trên 2 lần để tạo 2 **Lambda Function** như hình.
 
-#### Cài đặt và cấu hình AWS CLI và Session Manager Plugin 
+![lambda](/images/5.CreateLambda/console_all_lambda.png) 
+
+4. Mặc định, các **Lambda Function** sẽ có **Time out** là **3s**, chúng ta sẽ nâng chỉ số này lên để đáp ứng cho trường hợp khối lượng công việc cần nhiều hơn **3s** để xử lý, ta sẽ làm tương tự ở **Lambda Function** còn lại.
+
+![lambda](/images/5.CreateLambda/choose_function.png)
+![lambda](/images/5.CreateLambda/choose_function_cfg.png)
+![lambda](/images/5.CreateLambda/increase_timeout_function.png)
+
+
+#### Script 
   
-Để thực hiện phần thực hành này, đảm bảo máy trạm của bạn đã cài [AWS CLI]() và [Session Manager Plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html)
+Để **Lambda Function** tương tác được với các service khác của AWS, chúng ta sẽ sử dụng thư viện **Boto3** do AWS phát triển, thông tin thêm về **Boto3** mọi người có thể đọc thêm ở [đây](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html).
 
-Bạn có thể tham khảo thêm bài thực hành về cài đặt và cấu hình AWS CLI [tại đây](https://000011.awsstudygroup.com/).
+Script sử dụng trong 2 **Lambda Function** mọi người có thể tham khảo ở [đây](https://github.com/dzisreal/FCJ-Workshop-1/tree/56a2e1f8bd6dfbe9a7d9f9ddeb0ad5502b993341/lambdas_script).
 
-{{%notice tip%}}
-Với Windows thì khi giải nén thư mục cài đặt **Session Manager Plugin** bạn hãy chạy file **install.bat** với quyền Administrator để thực hiện cài đặt.
-{{%/notice%}}
-
-#### Thực hiện Portforwarding 
-
-1. Chạy command dưới đây trong **Command Prompt** trên máy của bạn để cấu hình **Port Forwarding**.
-
-```
-  aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region (your region) 
-```
-{{%notice tip%}}
-
-Thông tin **Instance ID** của **Windows Private Instance** có thể tìm được khi bạn xem chi tiết máy chủ EC2 Windows Private Instance.
-
-{{%/notice%}}
-
-  + Câu lệnh ví dụ
-
-```
-C:\Windows\system32>aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region ap-southeast-1
-```
-
-{{%notice warning%}}
-
-Nếu câu lệnh của bạn báo lỗi như dưới đây : \
-SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\
-Chứng tỏ bạn chưa cài Session Manager Plugin thành công. Bạn có thể cần khởi chạy lại **Command Prompt** sau khi cài **Session Manager Plugin**.
-
-{{%/notice%}}
-
-2. Kết nối tới **Private Windows Instance** bạn đã tạo bằng công cụ **Remote Desktop** trên máy trạm của bạn.
-  + Tại mục Computer: điền **localhost:9999**.
-
-
-![FWD](/images/5.fwd/003-fwd.png)
-
-
-3. Quay trở lại giao diện quản trị của dịch vụ System Manager - Session Manager.
-  + Click tab **Session history**.
-  + Chúng ta sẽ thấy các session logs với tên Document là **AWS-StartPortForwardingSession**.
-
-
-![FWD](/images/5.fwd/004-fwd.png)
-
-
-Chúc mừng bạn đã hoàn tất bài thực hành hướng dẫn cách sử dụng Session Manager để kết nối cũng như lưu trữ các session logs trong S3 bucket. Hãy nhớ thực hiện bước dọn dẹp tài nguyên để tránh sinh chi phí ngoài ý muốn nhé.
+Tiếp theo, chúng ta sẽ tiến hành tạo bảng DynamoDB để lưu **Job's Entry**.

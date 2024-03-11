@@ -23,7 +23,9 @@ pre : " <b> 3.2. </b> "
 
 ![Connect](/images/3.CreateRole/Lambdapolicy.png)
 
-  + Vì ***Lambda***.
+  + Để ***Lambda*** có thể thực hiện việc tạo job Glue, cần quyền ***iam:PassRole*** để pass qua bước xác thực trong quá trình tạo **Glue** job, ở đây chúng ta sẽ tạo 1 ***custom policy*** có quyền ***iam:PassRole*** và gắn vào role.
+
+![Connect](/images/3.CreateRole/lambdaaddcustompolicy.png)
 
   + Click ***Next***.
   + Tại trang ***Name, review, and create***, điền ***Role name*** và ***Description***, kiểm tra lại ***Trust policy*** và ***Add permissions***, sau đó bấm ***Create role***

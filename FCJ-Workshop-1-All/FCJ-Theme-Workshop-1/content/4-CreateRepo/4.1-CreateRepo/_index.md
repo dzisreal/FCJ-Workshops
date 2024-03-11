@@ -8,11 +8,9 @@ pre : " <b> 4.1 </b> "
 
 
 #### Tạo Repository
-{{% notice warning %}}
-Khi tạo ***Repository CodeCommit***, mọi người cần chú ý đến **Region**, ở link truy cập bên dưới, vì mình làm workshop ở **Region Sydney** nên link sẽ điều hướng đẫn **Sydney**, mọi người cần điều chỉnh lại về đúng **Region** của mình 
-{{% /notice %}}
 
-1. Truy cập vào [giao diện quản trị dịch vụ CodeCommit](https://ap-southeast-2.console.aws.amazon.com/codesuite/codecommit/start?region=ap-southeast-2)
+
+1. Truy cập vào [giao diện quản trị dịch vụ CodeCommit](https://console.aws.amazon.com/codecommit/home)
   + Click ***Create repository***.
 
 ![Connect](/images/4.CreateRepo/clickcreaterepo.png)

@@ -10,4 +10,5 @@ Trong bước này, chúng ta sẽ thực hiện tạo các Policy và Role c
 
 ### Nội dung
 3.1. [Tạo Role cho CodePipeline](3.1-Codepipeline/) \
-3.2. [Tạo Role cho Lambda](3.2-Lambda/) 
+3.2. [Tạo Role cho Lambda](3.2-Lambda/)
+3.3. [Tạo Role cho Glue](3.3-Glue/)

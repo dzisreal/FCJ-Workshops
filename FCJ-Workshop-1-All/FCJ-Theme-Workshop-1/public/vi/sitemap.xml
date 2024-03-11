@@ -2,18 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/vi/4-createrepo/4.1-updateiamrole/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/4-createrepo/4.1-updateiamrole/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/4-createrepo/4.1-updateiamrole/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
@@ -38,6 +26,18 @@
                 href="//localhost:1313/vi/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/4-createrepo/4.1-createrepo/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-createrepo/4.1-createrepo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-createrepo/4.1-createrepo/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/3-policyandrole/3.1-codepipeline/</loc>
     <xhtml:link
                 rel="alternate"
@@ -50,6 +50,18 @@
                 href="//localhost:1313/vi/3-policyandrole/3.1-codepipeline/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/4-createrepo/4.2-remote/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-createrepo/4.2-remote/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-createrepo/4.2-remote/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/3-policyandrole/3.2-lambda/</loc>
     <xhtml:link
                 rel="alternate"
@@ -60,18 +72,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/3-policyandrole/3.2-lambda/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/4-createrepo/4.2-creates3bucket/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/4-createrepo/4.2-creates3bucket/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/4-createrepo/4.2-creates3bucket/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-overview/</loc>
@@ -99,17 +99,15 @@
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-policyandrole/3.3-glue/</loc>
-  </url><url>
-    <loc>//localhost:1313/vi/4-createrepo/4.3-creategwes3/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-createrepo/4.3-creategwes3/"
+                href="//localhost:1313/3-policyandrole/3.3-glue/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-createrepo/4.3-creategwes3/"
+                href="//localhost:1313/vi/3-policyandrole/3.3-glue/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/4-createrepo/</loc>
@@ -124,18 +122,6 @@
                 href="//localhost:1313/vi/4-createrepo/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-createrepo/4.4-configsessionlogs/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/4-createrepo/4.4-configsessionlogs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/4-createrepo/4.4-configsessionlogs/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/5-createlambda/</loc>
     <xhtml:link
                 rel="alternate"
@@ -148,21 +134,53 @@
                 href="//localhost:1313/vi/5-createlambda/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-createpipeline/</loc>
+    <loc>//localhost:1313/vi/6-createdynamodb_s3/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-createpipeline/"
+                href="//localhost:1313/6-createdynamodb_s3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-createpipeline/"
+                href="//localhost:1313/vi/6-createdynamodb_s3/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/7-check/</loc>
+    <loc>//localhost:1313/vi/7-createpipeline/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-createpipeline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-createpipeline/"
+                />
   </url><url>
-    <loc>//localhost:1313/vi/8-cleanup/</loc>
+    <loc>//localhost:1313/vi/8-check/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-check/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-check/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/9-cleanup/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/9-cleanup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/9-cleanup/"
+                />
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>
     <xhtml:link

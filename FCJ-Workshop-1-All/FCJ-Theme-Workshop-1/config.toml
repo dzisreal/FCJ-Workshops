@@ -1,3 +1,7 @@
+relativeURLs = true
+#baseURL = "https://dzisreal.github.io/FCJ-Workshope-1-Deploy/"
+
+
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 
@@ -15,11 +19,12 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
+
   
 [Languages]
 [Languages.en]
-title = "AWS System Manager"
-weight = 1
+title = "CI/CD on AWS"
+weight = 2
 languageName = "English"
 
 [[Languages.en.menu.shortcuts]]
@@ -29,8 +34,8 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj/"
 weight = 20
 
 [Languages.vi]
-title = "AWS System Manager"
-weight = 2
+title = "CI/CD trên AWS"
+weight = 1
 languageName = "Tiếng Việt"
 
 [[Languages.vi.menu.shortcuts]]
